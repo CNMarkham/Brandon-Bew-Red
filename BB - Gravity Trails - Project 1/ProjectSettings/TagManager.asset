@@ -9,6 +9,7 @@ TagManager:
   - Ground
   - wall
   - Pessi
+  - Collectable
   layers:
   - Default
   - TransparentFX
