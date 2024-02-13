@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public Throwable direction;
+    public Vector3 direction;
     public float speed;
-    public GameObject Pessi;
-    // Start is called before the first frame update
     void Start()
     {
-        direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>();
-        Pessi = GameObject.FindGameObjectWithTag("Pessi");
+        direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>().offset;
+        Invoke("DestroyThrowable", 1.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction.offset * Time.deltaTime * speed;
+        transform.position += direction * Time.deltaTime * speed;
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -25,7 +24,7 @@ public class Projectile : MonoBehaviour
         if (collision.gameObject.tag == "Pessi")
         {
             gameObject.SetActive(false);
-            Pessi.SetActive(false);
+            collision.gameObject.SetActive(false);
         }
     }
     
