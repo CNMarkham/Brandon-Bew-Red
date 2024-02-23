@@ -10,6 +10,7 @@ TagManager:
   - wall
   - Pessi
   - Collectable
+  - Teleport
   layers:
   - Default
   - TransparentFX

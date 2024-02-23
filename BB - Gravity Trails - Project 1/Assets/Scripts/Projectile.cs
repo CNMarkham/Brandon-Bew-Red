@@ -6,10 +6,14 @@ public class Projectile : MonoBehaviour
 {
     public Vector3 direction;
     public float speed;
+
+    public Teleport pessiCount;
     void Start()
     {
         direction = GameObject.FindGameObjectWithTag("Player").GetComponent<Throwable>().offset;
         Invoke("DestroyThrowable", 1.0f);
+
+        pessiCount = GameObject.FindGameObjectWithTag("Teleport").GetComponent<Teleport>();
     }
 
     // Update is called once per frame
@@ -25,6 +29,7 @@ public class Projectile : MonoBehaviour
         {
             gameObject.SetActive(false);
             collision.gameObject.SetActive(false);
+            pessiCount.pessiCount -= 1;
         }
     }
     

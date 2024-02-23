@@ -9,6 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float xForce;
     public float xDirection;
     private Rigidbody2D enemyRigidbody;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,4 +33,5 @@ public class EnemyMovement : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
+
 }
