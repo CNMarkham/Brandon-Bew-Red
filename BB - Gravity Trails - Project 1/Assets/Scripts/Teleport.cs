@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Teleport : MonoBehaviour
 {
     public int pessiCount;
+    public int sceneNumber;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Teleport : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && pessiCount == 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(sceneNumber);
         }
     }
 }
