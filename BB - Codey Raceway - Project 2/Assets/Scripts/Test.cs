@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class Test : MonoBehaviour
 {
-    private int []Testing;
-    // Start is called before the first frame update
-    void Start()
-    {
-     
 
+    public int []Testing;
+    private string sting;
+
+
+    private void Start()
+    {
+      //  Testing[0] ;
+        sting = "@";
+    }
+    private void Update()
+    {
+        //if (Testing > 12 && Testing < 50)
+        //{
+
+        //}
+        //else if (Testing < 12 && Testing > 50)
+        //{
+        //    yourMom();
+        //}
+
+        //for (int i = 0; i <= 100; i++)
+        //{
+        //    Testing += i;
+        //}
+    }
+
+    void yourMom(float poke)
+    {
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-    }
-
-    void Banana(int test)
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
     {
-        Banana(Testing[0]);
+        
     }
 }
