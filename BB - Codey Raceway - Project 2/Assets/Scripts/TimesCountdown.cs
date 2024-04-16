@@ -11,6 +11,7 @@ public class TimesCountdown : MonoBehaviour
     public float totalLapTime;
     public float totalStartCountdown;
     public CodeyMove cm;
+    public TextMeshProUGUI You;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,8 @@ public class TimesCountdown : MonoBehaviour
             lapTime.text = " ";
             print("Time is up");
             cm.Speed = 0;
+            You.text = "You Lose!";
+            
         }
     }
 }
