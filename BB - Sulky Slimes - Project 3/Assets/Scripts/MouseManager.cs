@@ -15,15 +15,26 @@ public class MouseManager : MonoBehaviour
     public Transform redBirdTransform;
     public Rigidbody redBirdRigidbody;
     public Vector3 originalRedBirdPosition;
+    public Quaternion originalRedBirdRotation;
+    public Quaternion rotation;
+
+    public LivesManager lives;
     // Start is called before the first frame update
     void Start()
     {
         originalRedBirdPosition = transform.position;
+        originalRedBirdRotation = transform.rotation;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (lives.lives < 0)
+        {
+            return;
+
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             clickStartLocation = Input.mousePosition;
@@ -45,8 +56,10 @@ public class MouseManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            lives.RemoveLife();
             redBirdTransform.position = originalRedBirdPosition;
             redBirdRigidbody.isKinematic = true;
+            redBirdTransform.rotation = originalRedBirdRotation;
         }
     }
 }
