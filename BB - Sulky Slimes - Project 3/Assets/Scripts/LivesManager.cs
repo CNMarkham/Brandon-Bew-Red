@@ -11,7 +11,7 @@ public class LivesManager : MonoBehaviour
     [Header("Lives")]
     public LivesManager livesManager;
 
-
+    public int SN;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class LivesManager : MonoBehaviour
     {
         if (lives == 0)
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(SN);
         }
     }
 
