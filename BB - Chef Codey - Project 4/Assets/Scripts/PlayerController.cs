@@ -24,15 +24,15 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         var cam = Camera.main.transform.TransformVector(transform.forward).normalized;
-        var newforward = new Vector3(cam.x, 0, cam.z);
+        var newforward = new Vector3(transform.forward.x, 0, transform.forward.z);
 
         //velocity.y += gravity * Time.deltaTime;
 
         var forward = Input.GetAxis("Vertical");
         var sideward = Input.GetAxis("Horizontal");
 
-        var direction = newforward * forward + Camera.main.transform.TransformVector(transform.right).normalized * sideward;
-
+        var direction = newforward * forward + Camera.main.transform.TransformVector(transform.right).normalized * 0;
+        transform.eulerAngles += new Vector3(0, sideward, 0);
 
         // Vector3 movement = new Vector3(horizontal, 0, vertical)  * speed / 100;
 
