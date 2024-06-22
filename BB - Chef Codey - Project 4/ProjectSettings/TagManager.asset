@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Key
   - Lock
+  - BKey
+  - RKey
+  - GKey
+  - KeyB
+  - yessir
   layers:
   - Default
   - TransparentFX
