@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public float timeSeconds = 60.0f;
     public TMP_Text textTime;
     public TMP_Text yessirText;
+    public bool stopTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,22 +20,31 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeSeconds -= Time.deltaTime;
-        textTime.text = timeSeconds.ToString();
-        textTime.text = Mathf.Round(timeSeconds).ToString();
-        if (timeSeconds <= 0.0f)
+        if (stopTimer == true)
         {
-            timerEnd();
+            Debug.Log("Yippie");
+            Time.timeScale = 0;
         }
-
-        //if(timeSeconds >= 0.0f)
-        //{
-        //    yessirText.(true);
-        //}
+        else
+        {
+            timeSeconds -= Time.deltaTime;
+            textTime.text = timeSeconds.ToString();
+            textTime.text = Mathf.Round(timeSeconds).ToString();
+            if (timeSeconds <= 0.0f)
+            {
+                timerEnd();
+            }
+        }
+        
+        
+         
     }
 
     void timerEnd()
     {
         SceneManager.LoadScene(0);
     }
+
+    
+
 }
